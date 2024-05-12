@@ -80,6 +80,30 @@ export const MenuProvider = ({ children }: { children: React.ReactNode }) => {
       setActiveMenu(menuList[0])
     }
   }, [])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const menu = menuList.find(menu => menu.name === entry.target.id)
+            menu && setActiveMenu(menu)
+          }
+        })
+      },
+      { threshold: 0.5 }, // Adjust threshold as needed
+    )
+
+    // Observe all div elements with the 'menu-item' class
+    document.querySelectorAll('.item-section').forEach(item => {
+      observer.observe(item)
+    })
+
+    // Cleanup function
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
   const handleSetActiveMenu = (menu: MenuItem) => {
     setActiveMenu(menu)
   }
