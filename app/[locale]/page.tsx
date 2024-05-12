@@ -1,19 +1,20 @@
-import About from '@/app/components/feat-about/about'
-import Contact from '@/app/components/feat-contact/contact'
-import Intro from '@/app/components/feat-intro/intro'
-import Resume from '@/app/components/feat-resume/resume'
-import Skills from '@/app/components/feat-skills/skills'
-import Specialization from '@/app/components/feat-specialization/specialization'
+'use client'
+
+import Section from '@/app/components/layout/section'
+import { MenuItem, useMenu } from '@/app/components/providers/menu.provider'
 import React from 'react'
 export default function Home() {
+  const { menuList } = useMenu()
+
   return (
     <div className='flex gap-24 flex-col'>
-      <Intro />
-      <About />
-      <Resume />
-      <Specialization />
-      <Skills />
-      <Contact />
+      {menuList.map((menu: MenuItem, index: number) => {
+        return (
+          <Section title={menu.name} icon={menu.icon} key={index}>
+            {menu.component}
+          </Section>
+        )
+      })}
     </div>
   )
 }
