@@ -33,7 +33,7 @@ export default function Resume() {
   ]
   return (
     <>
-      <Title as='h2' className='text-5xl leading-tight text-white'>
+      <Title as='h2' className='text-3xl md:text-5xl leading-tight text-white'>
         Experience
       </Title>
       <div className='mt-8'>

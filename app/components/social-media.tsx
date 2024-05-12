@@ -12,7 +12,7 @@ export type Social = {
   url: string
   icon: React.ReactNode
 }
-export default function SocialsMedia() {
+export default function SocialsMedia({ size = 'md' }: { size?: 'sm' | 'md' }) {
   const socials: Social[] = [
     {
       name: 'Github',
@@ -42,6 +42,7 @@ export default function SocialsMedia() {
           <Button
             key={index}
             radius='full'
+            size={size}
             isIconOnly
             as={Link}
             color='success'
