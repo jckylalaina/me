@@ -8,7 +8,7 @@ type SectionProps = {
 //eslint-disable-next-line
 const Section = React.forwardRef((props: SectionProps, ref: any) => {
   return (
-    <section ref={ref} className='px-5 md:pt-24  md:pr-24'>
+    <section ref={ref} className='px-5 md:pt-24  md:pr-24' id={props.title}>
       <div className='flex flex-row w-full mb-12'>
         <Button
           startContent={props?.icon}
