@@ -4,7 +4,10 @@ import React from 'react'
 export default function About() {
   return (
     <>
-      <Title as='h2' className='text-5xl leading-tight text-white'>
+      <Title
+        as='h2'
+        className='text-3xl md:text-5xl leading-tight md:leading-normal©©©© text-white'
+      >
         Jacky in Bytes: Crafting <span>Digital Masterpieces</span>
       </Title>
       <div className='leading-normal mt-8 flex flex-col gap-3'>

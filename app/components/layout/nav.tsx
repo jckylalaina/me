@@ -12,8 +12,9 @@ export default function Nav() {
     setActiveMenu(menu)
   }
   return (
-    <div className='rounded-full px-2 py-5 flex flex-col gap-3 absolute top-1/2  -translate-y-1/2 right-5 border border-secondary'>
+    <div className='rounded-full px-2 py-5 md:flex flex-col gap-3 absolute top-1/2  -translate-y-1/2 right-5 border border-secondary hidden'>
       {menuList.map((menu: MenuItem, index: number) => {
+        const Icon = menu.icon
         return (
           <Button
             size='md'
@@ -22,7 +23,7 @@ export default function Nav() {
             className={`bg-transparent hover:text-success ${getActiveMenu()?.name == menu.name && 'text-success'}`}
             onClick={() => handleClick(menu)}
           >
-            {menu.icon}
+            {<Icon />}
           </Button>
         )
       })}

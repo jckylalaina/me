@@ -19,7 +19,7 @@ export default function PersonalInfo() {
   return (
     <EaseInLeft>
       <Card
-        className=' py-4 w-[350px] h-[665px] p-4 bg-opacity-30 bg-transparent md:bg-primary  md:border-default md:border'
+        className=' py-4 w-[350px] h-[665px] p-4 bg-opacity-30 bg-transparent md:bg-primary  md:border-default md:border hidden md:flex'
         radius='lg'
         isHoverable={false}
         shadow={(isMobile && 'none') || 'md'}
@@ -50,7 +50,7 @@ export default function PersonalInfo() {
           <small className='text-secondary'>
             © {new Date().getFullYear()} Jacky. All Rights Reserved
           </small>
-          <SocialsMedia />
+          <SocialsMedia size='md' />
           <Button
             radius='full'
             color='success'

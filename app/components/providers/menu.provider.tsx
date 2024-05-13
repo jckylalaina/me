@@ -6,6 +6,7 @@ import Resume from '@/app/components/feat-resume/resume'
 import Skills from '@/app/components/feat-skills/skills'
 import Specialization from '@/app/components/feat-specialization/specialization'
 import React, { createContext, useContext, useEffect, useState } from 'react'
+import { IconType } from 'react-icons'
 import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai'
 import { FaDollarSign } from 'react-icons/fa6'
 import { HiOutlineWrenchScrewdriver } from 'react-icons/hi2'
@@ -14,7 +15,7 @@ import { TbSubtask } from 'react-icons/tb'
 // Define the shape of your menu item
 export interface MenuItem {
   name: string
-  icon: React.ReactNode
+  icon: IconType
   component: React.ReactNode
 }
 
@@ -22,6 +23,8 @@ export interface MenuItem {
 interface MenuContextType {
   menuList: MenuItem[]
   activeMenu: MenuItem | null
+  isSideBarOpen: boolean
+  toogleSidebarMenu: () => void
   setActiveMenu: (menu: MenuItem) => void
   getActiveMenu: () => MenuItem | null
 }
@@ -41,36 +44,40 @@ export const MenuProvider = ({ children }: { children: React.ReactNode }) => {
   const menuList: MenuItem[] = [
     {
       name: 'introduce',
-      icon: <AiOutlineHome />,
+      icon: AiOutlineHome,
       component: <Intro />,
     },
     {
       name: 'about',
-      icon: <AiOutlineUser />,
+      icon: AiOutlineUser,
       component: <About />,
     },
     {
       name: 'resume',
-      icon: <IoBriefcaseOutline />,
+      icon: IoBriefcaseOutline,
       component: <Resume />,
     },
     {
       name: 'specializations',
-      icon: <TbSubtask />,
+      icon: TbSubtask,
       component: <Specialization />,
     },
     {
       name: 'stack',
-      icon: <HiOutlineWrenchScrewdriver />,
+      icon: HiOutlineWrenchScrewdriver,
       component: <Skills />,
     },
     {
       name: 'contact',
-      icon: <FaDollarSign />,
+      icon: FaDollarSign,
       component: <Contact />,
     },
   ]
-  const [activeMenu, setActiveMenu] = useState<MenuItem | null>(null)
+  const [activeMenu, setActiveMenu] = useState<MenuItem | null>(menuList[0])
+  const [isSideBarOpen, setShowSidebarMenu] = useState<boolean>(false)
+  const toogleSidebarMenu = () => {
+    setShowSidebarMenu(!isSideBarOpen)
+  }
   useEffect(() => {
     const hash = window.location.hash.slice(1)
     const menu = menuList.find(menu => menu.name === hash)
@@ -115,6 +122,8 @@ export const MenuProvider = ({ children }: { children: React.ReactNode }) => {
   const value: MenuContextType = {
     menuList,
     activeMenu,
+    isSideBarOpen,
+    toogleSidebarMenu,
     setActiveMenu: handleSetActiveMenu,
     getActiveMenu: handleGetActiveMenu,
   }
