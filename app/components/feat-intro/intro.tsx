@@ -3,7 +3,6 @@ import ProjectIcon from '@/app/components/feat-intro/project.icon'
 import Title from '@/app/components/titlte'
 import ExperienceGroupsButton from '@/app/components/feat-intro/expercience.group'
 import AnimatedText from '@/app/components/animated.text'
-import { EaseOnScroll } from '@/app/components/animation/entrance.animation'
 export default function Intro() {
   return (
     <>
@@ -19,9 +18,7 @@ export default function Intro() {
       <div className='flex flex-row justify-end px-24 mt-14'>
         <ProjectIcon />
       </div>
-      <EaseOnScroll animationFrom={{ x: 0 }} animationTo={{ x: 0 }}>
-        <ExperienceGroupsButton />
-      </EaseOnScroll>
+      <ExperienceGroupsButton />
     </>
   )
 }
