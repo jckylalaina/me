@@ -20,7 +20,7 @@ export default function Nav() {
             size='md'
             key={index}
             isIconOnly
-            className={`bg-transparent hover:text-success ${getActiveMenu()?.name == menu.name && 'text-success'}`}
+            className={`bg-transparent  text-secondary-50 hover:text-success ${getActiveMenu()?.name == menu.name && 'text-success'}`}
             onClick={() => handleClick(menu)}
           >
             {<Icon />}

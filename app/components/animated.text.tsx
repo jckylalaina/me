@@ -51,6 +51,7 @@ export default function AnimatedText({ text, className }: AnimatedTextProps) {
     const controls = animate(count, text.length, {
       type: 'tween',
       duration: 2,
+      delay: 1,
       ease: 'linear',
       onUpdate: latest => {
         if (latest === text.length) {

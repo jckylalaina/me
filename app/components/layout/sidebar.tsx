@@ -41,7 +41,7 @@ export default function SideBar() {
               <Button
                 size='md'
                 key={menu.name}
-                className={`bg-transparent hover:text-success ${getActiveMenu()?.name == menu.name && 'text-success'}`}
+                className={`bg-transparent text-secondary-50 hover:text-success ${getActiveMenu()?.name == menu.name && 'text-success'}`}
                 onClick={() => handleClick(menu)}
                 startContent={<Icon size={'1.1rem'} />}
               >

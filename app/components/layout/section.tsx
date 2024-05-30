@@ -1,5 +1,4 @@
 'use client'
-import { useMenu } from '@/app/components/providers/menu.provider'
 import { Button } from '@nextui-org/react'
 import React from 'react'
 import { IconType } from 'react-icons'
@@ -11,8 +10,6 @@ type SectionProps = {
 //eslint-disable-next-line
 const Section = React.forwardRef((props: SectionProps, ref: any) => {
   const Icon = props?.icon
-  const { toogleSidebarMenu } = useMenu()
-  const handleMobileMenuClick = () => toogleSidebarMenu()
   return (
     <section
       ref={ref}
