@@ -26,7 +26,7 @@ export default function PersonalInfo() {
       >
         <CardHeader className='pb-0 pt-2 px-4 flex-row items-start justify-between mb-4'>
           <Logo />
-          <p className='text-end'>
+          <p className='text-end text-success'>
             {`</> `}Web
             <br />
             developer
@@ -42,7 +42,7 @@ export default function PersonalInfo() {
             />
           </div>
           <div>
-            <Snippet>radolalainajacky@gmail.com</Snippet>
+            <Snippet color='secondary'>radolalainajacky@gmail.com</Snippet>
             <p className='text-xl text-center leading-relaxed mt-2'>
               Base in Antananarivo, Mga
             </p>

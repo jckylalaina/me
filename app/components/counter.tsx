@@ -15,9 +15,9 @@ export default function Counter({
 
   useEffect(() => {
     const node = nodeRef.current
-
     const controls = animate(from, to, {
       duration: 2,
+      delay: 1,
       onUpdate(value) {
         if (node) {
           node.textContent = `${value.toFixed(0)}+`

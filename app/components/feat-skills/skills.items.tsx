@@ -18,47 +18,47 @@ export default function SkillsItems() {
   const skills: Skills[] = [
     {
       name: 'NEXT.js',
-      icon: <RiNextjsFill size={'5rem'} />,
+      icon: <RiNextjsFill size={'7rem'} />,
       url: 'https://nextjs.org/',
     },
     {
       name: 'Worpress',
-      icon: <IoLogoWordpress size={'5rem'} />,
+      icon: <IoLogoWordpress size={'7rem'} />,
       url: 'https://wordpress.org/',
     },
     {
       name: 'Odoo',
-      icon: <SiOdoo size={'5rem'} />,
+      icon: <SiOdoo size={'7rem'} />,
       url: 'https://www.odoo.com/',
     },
     {
       name: 'Python',
-      icon: <FaPython size={'5rem'} />,
+      icon: <FaPython size={'7rem'} />,
       url: 'https://www.python.org/',
     },
     {
       name: 'Typescript',
-      icon: <SiTypescript size={'5rem'} />,
+      icon: <SiTypescript size={'7rem'} />,
       url: 'https://www.python.org/',
     },
     {
       name: 'Javascript',
-      icon: <RiJavascriptFill size={'5rem'} />,
+      icon: <RiJavascriptFill size={'7rem'} />,
       url: 'https://www.python.org/',
     },
     {
       name: 'PHP',
-      icon: <BiLogoPhp size={'5rem'} />,
+      icon: <BiLogoPhp size={'7rem'} />,
       url: 'https://www.python.org/',
     },
     {
       name: 'TailwindCss',
-      icon: <RiTailwindCssFill size={'5rem'} />,
+      icon: <RiTailwindCssFill size={'7rem'} />,
       url: 'https://www.python.org/',
     },
   ]
   return (
-    <div className='flex flex-row w-full flex-wrap mt-8 gap-24'>
+    <div className='flex justify-center md:justify-start flex-row w-full flex-wrap mt-16 md:mt-8 gap-20'>
       {skills.map((skillsItem: Skills, index: number) => (
         <div className='w-100 h-100  p-5 rounded-xl' key={index}>
           {skillsItem.icon}
