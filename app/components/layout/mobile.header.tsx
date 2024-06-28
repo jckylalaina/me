@@ -7,7 +7,7 @@ export default function MobileHeader() {
   const { activeMenu, toogleSidebarMenu } = useMenu()
   const Icon = activeMenu?.icon
   return (
-    <div className='flex flex-row w-full  md:hidden justify-between mt-5 sticky top-0 py-8  bg-primary'>
+    <div className='flex flex-row w-full  xl:hidden justify-between mt-5 sticky top-0 py-8  bg-primary'>
       <Button
         startContent={Icon && <Icon />}
         size={'md'}
@@ -18,7 +18,7 @@ export default function MobileHeader() {
       </Button>
       <AiOutlineMenuFold
         size={'2rem'}
-        className='text-secondary hover:text-white cursor-pointer md:hidden'
+        className='text-secondary hover:text-white cursor-pointer xl:hidden'
         onClick={toogleSidebarMenu}
       />
     </div>

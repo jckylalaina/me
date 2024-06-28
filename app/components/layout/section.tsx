@@ -16,7 +16,7 @@ const Section = React.forwardRef((props: SectionProps, ref: any) => {
       className='item-section px-5  md:pt-24  md:pr-24'
       id={props.title}
     >
-      <div className='md:flex flex-row w-full mb-12 justify-start hidden'>
+      <div className='xl:flex flex-row w-full mb-12 justify-start hidden'>
         <Button
           startContent={Icon && <Icon />}
           size={'md'}
