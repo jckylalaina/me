@@ -18,21 +18,23 @@ export default function BaseLayout({
   children: React.ReactNode
 }) {
   return (
-    <main className='dark min-h-screen bg-background md:max-w-screen-2xl mx-auto px-5 text-secondary relative flex flex-col-reverse'>
-      <div className='grid grid-cols-1 md:grid-cols-3 h-full w-full relative'>
-        <div className='w-full h-full flex justify-start items-center pl-12'>
-          <PersonalInfo />
+    <main className='dark min-h-screen bg-background  mx-auto  text-secondary relative max-w-[2000px]'>
+      <div className='max-w-screen-4xl flex flex-col-reverse mx-auto px-5 md:px-20'>
+        <div className='grid grid-cols-1 md:grid-cols-3 h-full w-full relative'>
+          <div className='w-full h-full flex justify-start items-center h-xl:items-start h-xl:pt-24 pl-12'>
+            <PersonalInfo />
+          </div>
+          <div
+            id='content-scroll'
+            className='col-span-2 md:overflow-y-scroll md:max-h-screen pb-24'
+          >
+            {children}
+          </div>
         </div>
-        <div
-          id='content-scroll'
-          className='col-span-2 md:overflow-y-scroll md:max-h-screen pb-24'
-        >
-          {children}
-        </div>
+        <MobileHeader />
+        <Nav />
+        <SideBar />
       </div>
-      <MobileHeader />
-      <Nav />
-      <SideBar />
       <AnimatedBackground />
     </main>
   )

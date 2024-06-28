@@ -12,6 +12,10 @@ const config: Config = {
     extend: {
       fontSize:{
         "big": "74px"
+      },
+      screens:{
+        '4xl': '1900px',
+        'h-xl': { 'raw': '(min-height: 1280px)' },
       }
     },
   },

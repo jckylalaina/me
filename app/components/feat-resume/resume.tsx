@@ -10,7 +10,14 @@ export default function Resume() {
       end: 'present',
       poste: 'Frontend Developer',
       enterprise: 'Resume example',
-      enterpriseURL: '',
+      enterpriseURL: 'https://resumedone.co/',
+    },
+    {
+      start:"2024",
+      end:"present",
+      poste: "Full-stack Developer",
+      enterprise: "Editions Pôle",
+      enterpriseURL: 'https://www.librairie-infinimath.com'
     },
     {
       start: '2023',

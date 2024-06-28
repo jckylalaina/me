@@ -2,23 +2,54 @@
 import schema from '@/app/components/feat-contact/form.schema'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Button, Input, Textarea } from '@nextui-org/react'
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { FaDollarSign, FaEnvelope, FaPhone, FaUser } from 'react-icons/fa6'
 import { MdTask } from 'react-icons/md'
-
+ import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 export default function Form() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors },reset
   } = useForm({
     resolver: yupResolver(schema),
   })
+  const [loading,setLoading] = useState(false)
 
   const submitForm = (data: any) => {
-    console.log(data)
+    if(loading == true) return false
+    setLoading(true)
+    fetch('/en/api/send-mail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      cache:"no-cache",
+      body: JSON.stringify(data)
+    })
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return res.json();
+    })
+    .then((responseData) => {
+      if (responseData?.message) {
+        toast.success(responseData.message);
+        reset()
+      } else {
+        toast.error('Message not found in response');
+      }
+      setLoading(false)
+    })
+    .catch((error) => {
+      console.error('There was a problem with the fetch operation:', error);
+      toast.error('Failed to send mail');
+    });
   }
+
 
   return (
     <form
@@ -68,7 +99,7 @@ export default function Form() {
           errorMessage={errors.subject && errors.subject.message}
         />
         <Input
-          type='number'
+          type='text'
           {...register('budget')}
           placeholder='Your budget'
           className='w-full'
@@ -87,12 +118,13 @@ export default function Form() {
       <Button
         radius='full'
         color='success'
-        isDisabled
-        className='uppercase w-full mt-14'
+        className={`uppercase w-full  mt-14 ${loading ? 'cursor-wait' : ''}`}
         aria-label='submit'
+        type='submit'
       >
         SEND MESSAGE
       </Button>
+      <ToastContainer />
     </form>
   )
 }

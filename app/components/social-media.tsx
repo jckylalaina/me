@@ -45,6 +45,7 @@ export default function SocialsMedia({ size = 'md' }: { size?: 'sm' | 'md' }) {
             size={size}
             isIconOnly
             as={Link}
+            target='blank'
             color='success'
             href={social.url}
             className='text-success hover:text-black hover:bg-success'

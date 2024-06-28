@@ -16,10 +16,15 @@ import { EaseInLeft } from '@/app/components/animation/entrance.animation'
 
 export default function PersonalInfo() {
   const isMobile = useMedia('(max-width: 768px)', false)
+  const handleHireClick =  () => {
+    if(window){
+      document.getElementById('contact')?.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest" })
+    }
+  }
   return (
     <EaseInLeft>
       <Card
-        className=' py-4 w-[350px] h-[665px] p-4 bg-opacity-30 bg-transparent md:bg-primary  md:border-default md:border hidden md:flex'
+        className=' py-4 w-[350px] h-[725px] p-4 bg-opacity-30 bg-transparent md:bg-primary  md:border-default md:border hidden md:flex'
         radius='lg'
         isHoverable={false}
         shadow={(isMobile && 'none') || 'md'}
@@ -51,15 +56,18 @@ export default function PersonalInfo() {
             © {new Date().getFullYear()} Jacky. All Rights Reserved
           </small>
           <SocialsMedia size='md' />
+          <div className='flex gap-5 flex-col w-full'>
           <Button
             radius='full'
             color='success'
             className='uppercase w-full'
             aria-label='Like'
+            onClick={handleHireClick}
             startContent={<AiOutlineMail />}
           >
             Hire me!
           </Button>
+          </div>
         </CardBody>
       </Card>
     </EaseInLeft>
