@@ -57,10 +57,16 @@ export default function SkillsItems() {
       url: 'https://www.python.org/',
     },
   ]
+  const handleUrlClick = (url:string) => {
+    if(!url || !window) return false
+    const win = window.open(url, '_blank');
+    win?.focus();
+
+  }
   return (
     <div className='flex justify-center md:justify-start flex-row w-full flex-wrap mt-16 md:mt-8 gap-20'>
       {skills.map((skillsItem: Skills, index: number) => (
-        <div className='w-100 h-100  p-5 rounded-xl' key={index}>
+        <div className='w-100 h-100  p-5 rounded-xl cursor-pointer' key={index} onClick={() => handleUrlClick(skillsItem?.url)}>
           {skillsItem.icon}
         </div>
       ))}

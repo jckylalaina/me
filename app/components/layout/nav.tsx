@@ -12,7 +12,7 @@ export default function Nav() {
     setActiveMenu(menu)
   }
   return (
-    <div className='rounded-full px-2 py-5 md:flex flex-col gap-3 absolute top-1/2  -translate-y-1/2 md:right-20 right-5 border border-secondary hidden'>
+    <div className='rounded-full px-2 py-5 md:flex flex-col gap-3 absolute top-1/2  -translate-y-1/2 md:right-14 xl:right-20 right-5 border border-secondary hidden'>
       {menuList.map((menu: MenuItem, index: number) => {
         const Icon = menu.icon
         return (

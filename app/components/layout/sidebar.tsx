@@ -4,6 +4,7 @@ import SocialsMedia from '@/app/components/social-media'
 import { Button } from '@nextui-org/react'
 import React from 'react'
 import { AiOutlineMenuUnfold } from 'react-icons/ai'
+import { AnimatePresence ,motion} from "framer-motion"
 export default function SideBar() {
   const {
     menuList,
@@ -23,7 +24,12 @@ export default function SideBar() {
     <div
       className={`backdrop-blur-sm	 fixed top-0 h-screen w-full ${isSideBarOpen ? '' : 'hidden'} overflow-hidden`}
     >
-      <div
+      <AnimatePresence>
+     {isSideBarOpen && <motion.div
+        initial={{ opacity: 0,x:500 }}
+        animate={{ opacity: 1 ,x:0}}
+        transition={{ duration: 0.7 }}
+        exit={{ opacity: 0,x:500 }}
         className={`absolute right-0 h-full bg-black bg-opacity z-20 w-80 py-4 pl-8 `}
       >
         <div className='text-secondary text-lg pl-4 flex flex-row justify-between pr-8 items-center'>
@@ -56,7 +62,8 @@ export default function SideBar() {
         <div className='mt-8 ml-4'>
           <SocialsMedia size='sm' />
         </div>
-      </div>
+      </motion.div> }
+      </AnimatePresence>
     </div>
   )
 }
