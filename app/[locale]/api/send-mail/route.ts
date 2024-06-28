@@ -32,12 +32,13 @@ export async function POST(request: Request) {
         };
 
         // Send the email
-        //const info = await transporter.sendMail(mailOptions);
+        const info = await transporter.sendMail(mailOptions);
         await Promise.resolve((resolve:any) => setTimeout(() => {resolve(true)},2000))
         return NextResponse.json(
             {
                 success: true,
                 message: 'Your message has been sent',
+                email: body?.email
             },
             {
                 status: 200,
