@@ -61,7 +61,7 @@ export default function PersonalInfo() {
             radius='full'
             color='success'
             className='uppercase w-full'
-            aria-label='Like'
+            aria-label='Hire me'
             onClick={handleHireClick}
             startContent={<AiOutlineMail />}
           >

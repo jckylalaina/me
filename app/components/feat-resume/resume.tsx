@@ -21,7 +21,7 @@ export default function Resume() {
     },
     {
       start: '2023',
-      end: 'present',
+      end: '2024',
       poste: 'Lead Developer',
       enterprise: 'Eufonie',
       enterpriseURL: 'https://www.eufonie.fr',
