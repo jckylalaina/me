@@ -8,16 +8,16 @@ export default function Resume() {
     {
       start: '2024',
       end: 'present',
-      poste: 'Frontend Developer',
+      poste: 'Software Engineer',
       enterprise: 'Resume example',
-      enterpriseURL: 'https://resumedone.co/',
+      enterpriseURL: 'https://resume-example.com',
     },
     {
-      start:"2024",
-      end:"present",
-      poste: "Full-stack Developer",
-      enterprise: "Editions Pôle",
-      enterpriseURL: 'https://www.librairie-infinimath.com'
+      start: '2024',
+      end: 'present',
+      poste: 'Full-stack Developer',
+      enterprise: 'Editions Pôle',
+      enterpriseURL: 'https://www.librairie-infinimath.com',
     },
     {
       start: '2023',
