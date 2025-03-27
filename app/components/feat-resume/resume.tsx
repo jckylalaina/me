@@ -15,7 +15,7 @@ export default function Resume() {
     {
       start: '2024',
       end: 'present',
-      poste: 'Full-stack Developer',
+      poste: 'Part Time Full-stack Developer',
       enterprise: 'Editions Pôle',
       enterpriseURL: 'https://www.librairie-infinimath.com',
     },
