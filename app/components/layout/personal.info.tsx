@@ -53,7 +53,7 @@ export default function PersonalInfo() {
           <div>
             <Snippet color='secondary'>radolalainajacky@gmail.com</Snippet>
             <p className='text-xl text-center leading-relaxed mt-2'>
-              Base in Antananarivo, Mga
+              Based in Antananarivo, MG
             </p>
           </div>
           <small className='text-secondary'>
