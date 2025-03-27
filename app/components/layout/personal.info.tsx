@@ -16,9 +16,13 @@ import { EaseInLeft } from '@/app/components/animation/entrance.animation'
 
 export default function PersonalInfo() {
   const isMobile = useMedia('(max-width: 768px)', false)
-  const handleHireClick =  () => {
-    if(window){
-      document.getElementById('contact')?.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest" })
+  const handleHireClick = () => {
+    if (window) {
+      document.getElementById('contact')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest',
+      })
     }
   }
   return (
@@ -41,8 +45,8 @@ export default function PersonalInfo() {
           <div className='min-h-48'>
             <Image
               alt='Card background'
-              className='object-cover rounded-xl'
-              src='/jacky.jpg'
+              className='object-cover rounded-full h-52'
+              src='/jacky-1.png'
               width={200}
             />
           </div>
@@ -57,16 +61,16 @@ export default function PersonalInfo() {
           </small>
           <SocialsMedia size='md' />
           <div className='flex gap-5 flex-col w-full'>
-          <Button
-            radius='full'
-            color='success'
-            className='uppercase w-full'
-            aria-label='Hire me'
-            onClick={handleHireClick}
-            startContent={<AiOutlineMail />}
-          >
-            Hire me!
-          </Button>
+            <Button
+              radius='full'
+              color='success'
+              className='uppercase w-full'
+              aria-label='Hire me'
+              onClick={handleHireClick}
+              startContent={<AiOutlineMail />}
+            >
+              Hire me!
+            </Button>
           </div>
         </CardBody>
       </Card>
