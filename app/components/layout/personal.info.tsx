@@ -44,9 +44,9 @@ export default function PersonalInfo() {
         <CardBody className='overflow-visible py-4 justify-start flex items-center gap-8'>
           <div className='min-h-48'>
             <Image
-              alt='Card background'
+              alt='Jacky'
               className='object-cover rounded-full h-52'
-              src='/jacky-1.png'
+              src='/jacky-crisp.jpeg'
               width={200}
             />
           </div>

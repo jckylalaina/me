@@ -8,7 +8,7 @@ export default function Resume() {
     {
       start: '2024',
       end: 'present',
-      poste: 'Software Engineer',
+      poste: 'Front-End Engineer',
       enterprise: 'Resume example',
       enterpriseURL: 'https://resume-example.com',
     },
@@ -20,24 +20,17 @@ export default function Resume() {
       enterpriseURL: 'https://www.librairie-infinimath.com',
     },
     {
-      start: '2023',
+      start: '2019',
       end: '2024',
-      poste: 'Lead Developer',
+      poste: 'Softare Developer',
       enterprise: 'Eufonie',
       enterpriseURL: 'https://www.eufonie.fr',
     },
     {
-      start: '2019',
+      start: '2021',
       end: 'present',
       poste: 'Full-stack Developer',
       enterprise: 'Freelance',
-    },
-    {
-      start: '2019',
-      end: '2023',
-      poste: 'Web Developer',
-      enterprise: 'Eufonie',
-      enterpriseURL: 'https://www.eufonie.fr',
     },
   ]
   return (
